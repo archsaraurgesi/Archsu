@@ -114,11 +114,12 @@ nav {
 .foto-title { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(44px,7vw,96px); line-height: 0.9; letter-spacing: 0.01em; }
 .foto-num { font-family: 'Outfit', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
 .foto-intro { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(16px,1.6vw,22px); line-height: 1.6; color: var(--ink-2); max-width: 54ch; margin-top: 1.5rem; text-wrap: pretty; }
-.foto-grid { columns: 4 230px; column-gap: clamp(8px,1vw,15px); padding: clamp(1.8rem,3.5vw,3rem) var(--pad) clamp(3rem,6vw,5.5rem); }
-.foto-grid figure { break-inside: avoid; margin: 0 0 clamp(8px,1vw,15px); overflow: hidden; background: #efeeec; }
-.foto-grid img { width: 100%; height: auto; display: block; filter: grayscale(1) contrast(1.02); transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.6s ease; }
+.foto-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(8px,1vw,15px); padding: clamp(1.8rem,3.5vw,3rem) var(--pad) clamp(3rem,6vw,5.5rem); }
+.foto-grid figure { margin: 0; overflow: hidden; background: #efeeec; aspect-ratio: 3/4; }
+.foto-grid img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1) contrast(1.02); transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.6s ease; }
 .foto-grid figure:hover img { transform: scale(1.03); }
-@media (max-width: 540px) { .foto-grid { columns: 2 140px; } }
+@media (max-width: 860px) { .foto-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 540px) { .foto-grid { grid-template-columns: repeat(2, 1fr); } }
 figure { margin: 0; }
 .page figure img { width: 100%; height: auto; display: block; } /* immagine intera, mai tagliata */
 
@@ -1133,7 +1134,7 @@ footer span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase
       <p class="bio-quote">«Ogni spazio racconta una storia. Il mio lavoro è ascoltarla e darle forma.»</p><!-- EDITABILE -->
       <p class="bio-text">Architetto con sede a Roma, mi occupo di ristrutturazioni residenziali e progettazione di interni con un approccio che mette al centro le persone e il luogo. Ogni progetto nasce da un ascolto profondo — della luce, dei materiali, di chi abiterà quegli spazi — alla ricerca di un dialogo tra memoria e contemporaneità.</p><!-- EDITABILE -->
       <div class="bio-stats">
-        <div><div class="bio-stat-n">2,5</div><div class="bio-stat-l">Anni di esperienza</div></div><!-- EDITABILE -->
+        <div><div class="bio-stat-n">3</div><div class="bio-stat-l">Anni di esperienza</div></div><!-- EDITABILE -->
         <div><div class="bio-stat-n">10+</div><div class="bio-stat-l">Progetti</div></div>
         <div><div class="bio-stat-n">Roma</div><div class="bio-stat-l">Sede</div></div>
       </div>
@@ -1198,7 +1199,7 @@ footer span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase
     <p class="contacts-sub">Disponibile per nuovi progetti residenziali e consulenze. Scrivimi per un primo incontro conoscitivo.</p><!-- EDITABILE -->
   </div>
   <dl class="contacts-list">
-    <div><dt>Email</dt><dd><a href="/cdn-cgi/l/email-protection#d0b1a2b3b8fea3b1a2b1a5b7a2b5a3b990b7bdb1b9bcfeb3bfbd"><span class="__cf_email__" data-cfemail="f29380919adc8193809387958097819bb2959f939b9edc919d9f">[email&#160;protected]</span></a></dd></div><!-- EDITABILE -->
+    <div><dt>Email</dt><dd><a href="mailto:arch.saraugresi@gmail.com">arch.saraugresi@gmail.com</a></dd></div><!-- EDITABILE -->
     <div><dt>Telefono</dt><dd><a href="tel:+393409871550">+39 340 987 1550</a></dd></div><!-- EDITABILE -->
     <div><dt>Sede</dt><dd>Roma, Italia</dd></div>
   </dl>
@@ -1209,7 +1210,7 @@ footer span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase
   <span>© 2026 · Roma · Portfolio</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function () {
   var els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
